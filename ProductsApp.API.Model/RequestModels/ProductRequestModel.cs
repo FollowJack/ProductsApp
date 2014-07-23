@@ -1,8 +1,8 @@
 ﻿using ProductsApp.Domain.Entities;
 
-namespace ProductsApp.API.Model.Dtos
+namespace ProductsApp.API.Model.RequestModels
 {
-    public class ProductDto
+    public class ProductRequestModel
     {
         #region Properties
         public int Id { get; set; }
@@ -12,20 +12,16 @@ namespace ProductsApp.API.Model.Dtos
         #endregion
 
         #region Constructors
-        public ProductDto() { }
-        public ProductDto(Product source)
-        {
-            UpdateModel(source);
-        }
+        public ProductRequestModel() { }
         #endregion
 
         #region Helpers
-        private void UpdateModel(Product source)
+        public void UpdateSource(Product source)
         {
-            Id = source.Id;
-            Name = source.Name;
-            Category = source.Category;
-            Price = source.Price;
+            source.Id = Id;
+            source.Name = Name;
+            source.Category = Category;
+            source.Price = Price;
         }
         #endregion
     }
