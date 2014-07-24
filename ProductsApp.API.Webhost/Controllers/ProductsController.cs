@@ -60,11 +60,11 @@ namespace ProductsApp.API.Webhost.Controllers
         public void PutProduct(int id, ProductRequestModel product)
         {
             product.Id = id;
-            var entity = new Product();
+            var productEntity = new Product();
 
-            product.UpdateSource(entity);
+            product.UpdateSource(productEntity);
 
-            if (!_repository.Update(entity))
+            if (!_repository.Update(productEntity))
                 throw new HttpResponseException(HttpStatusCode.NotFound);
         }
 

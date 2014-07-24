@@ -36,7 +36,8 @@ namespace ProductsApp.Domain.Repositories
 
             item.Id = _nextId++;
             products.Add(item);
-            return item;
+            var entityFromDatabase =  Get(item.Id);
+            return entityFromDatabase;
         }
 
         public void Remove(int id)
