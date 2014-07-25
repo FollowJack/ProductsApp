@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<div>
+    <h2>All Products</h2>
+    <ul id="products" />
+</div>
+<div>
+    <h2>Search by ID</h2>
+    <input type="text" id="prodId" size="5" />
+    <input type="button" value="Search" onclick="find();" />
+    <input type="button" value="Delete" onclick="deleteProduct();" />
+    <p id="product" />
+</div>
+
+<div>
+    <h2>Edit first Entry</h2>
+    <input type="text" id="productId" value="1" />
+    <input type="text" id="productName" value="Tomato soup" />
+    <input type="text" id="productCategory" value="Groceries" />
+    <input type="text" id="productPrice" value="1.39" />
+    <input type="button" value="Put" onclick="putProduct();" />
+    <input type="button" value="Post" onclick="createProduct();" />
+</div>
+
+
+
