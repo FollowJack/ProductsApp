@@ -1,91 +1,84 @@
 ﻿var uri = 'http://Localhost:17223/api/products';
+var messageBoxId = '#product';
 
-$(document).ready(function () {
-    getAllProducts();
-});
-
-function formatItem(item) {
-    return item.Name + ': $' + item.Price;
-}
-
-function find() {
-    var id = $('#prodId').val();
-    $.getJSON(uri + '/' + id)
-        .done(function (data) {
-            $('#product').text(formatItem(data));
-        })
-        .fail(function (jqXHR, textStatus, err) {
-            $('#product').text('Error: ' + err);
-        });
+function getProduct(id) {
+    var product;
+    $.ajax({
+        url: uri + '/' + id,
+        type: 'GET',
+        async: false,
+        success: function (data) {
+            product = data;
+        },
+        fail: function (jqXHR, textStatus, err) {
+            $(messageBoxId).text('Error: ' + err);
+        }
+    });
+    return product;
 }
 
 function getAllProducts() {
-    $('#products').empty();
-    // Send an AJAX request
-    $.get(uri).done(function (data) {
-        // On success, 'data' contains a list of products.
-        $.each(data, function (key, item) {
-            // Add a list item for the product.
-            $('<li>', { text: formatItem(item) }).appendTo($('#products'));
-        });
-    });
-}
-
-function deleteProduct() {
-    var id = $('#prodId').val();
+    var products;
     $.ajax({
-        url: uri + '/' + id,
-        type: 'DELETE',
-        success: function () {
-            getAllProducts();
-        },
-        error: function (jqXHR, textStatus, err) {
-            console.log(jqXHR);
-            console.log(textStatus);
-            $('#product').text('Error: ' + err);
+        url: uri,
+        type: 'GET',
+        async: false,
+        success: function (data) {
+            products = data;
         }
     });
+    return products;
 }
 
-function putProduct() {
-    var product = {};
-    product.Id = $('#productId').val();
-    product.Name = $('#productName').val();
-    product.Category = $('#productCategory').val();
-    product.Price = $('#productPrice').val();
+function deleteProductBy(id) {
+    var wasSuccesful;
+    $.ajax({
+        url: uri + '/' + id,
+        async: false,
+        type: 'DELETE',
+        success: function () {
+            wasSuccesful = true;
+        },
+        error: function (jqXHR, textStatus, err) {
+            $(messageBoxId).text('Error: ' + err);
+            wasSuccesful = false;
+        }
+    });
+    return wasSuccesful;
+}
 
+function putProduct(product) {
+    var wasSuccesful;
     $.ajax({
         url: uri + '/' + product.Id,
         type: 'PUT',
+        async: false,
         data: product,
         success: function () {
-            getAllProducts();
+            wasSuccesful = true;
         },
         error: function (jqXHR, textStatus, err) {
-            console.log(jqXHR);
-            console.log(textStatus);
-            $('#product').text('Error: ' + err);
+            $(messageBoxId).text('Error: ' + err);
+            wasSuccesful = false;
         }
     });
+    return wasSuccesful;
 }
 
-function createProduct() {
-    var product = {};
-    product.Name = $('#productName').val();
-    product.Category = $('#productCategory').val();
-    product.Price = $('#productPrice').val();
-
+function postProduct(product) {
+    var wasSuccesful;
     $.ajax({
         url: uri,
         type: 'POST',
+        async: false,
         data: product,
         success: function () {
-            getAllProducts();
+            wasSuccesful = true;
         },
         error: function (jqXHR, textStatus, err) {
-            console.log(jqXHR);
-            console.log(textStatus);
-            $('#product').text('Error: ' + err);
+            $(messageBoxId).text('Error: ' + err);
+            wasSuccesful = false;
         }
     });
+    return wasSuccesful;
 }

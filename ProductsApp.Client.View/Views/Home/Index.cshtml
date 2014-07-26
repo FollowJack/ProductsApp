@@ -5,12 +5,13 @@
 
 <div>
     <h2>All Products</h2>
-    <ul id="products" />
+    <ul id="products"></ul>
 </div>
 <div>
     <h2>Search by ID</h2>
     <input type="text" id="prodId" size="5" />
-    <input type="button" value="Search" onclick="find();" />
+
+    <input type="button" value="Search" onclick="findProduct();" />
     <input type="button" value="Delete" onclick="deleteProduct();" />
     <p id="product" />
 </div>
@@ -21,7 +22,8 @@
     <input type="text" id="productName" value="Tomato soup" />
     <input type="text" id="productCategory" value="Groceries" />
     <input type="text" id="productPrice" value="1.39" />
-    <input type="button" value="Put" onclick="putProduct();" />
+
+    <input type="button" value="Put" onclick="updateProduct();" />
     <input type="button" value="Post" onclick="createProduct();" />
 </div>
 
