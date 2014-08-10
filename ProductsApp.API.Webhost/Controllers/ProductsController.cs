@@ -51,8 +51,7 @@ namespace ProductsApp.API.Webhost.Controllers
 
             entity = _repository.Add(entity);
             var response = Request.CreateResponse<ProductDto>(HttpStatusCode.Created, new ProductDto(entity));
-
-            string uri = Url.Link("DefaultApi", new { id = item.Id });
+            string uri = Url.Link("DefaultApi", new { id = entity.Id });
             response.Headers.Location = new Uri(uri);
             return response;
         }

@@ -19,6 +19,8 @@ namespace ProductsApp.API.Webhost
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            TraceConfig.Register(config);
         }
     }
 }

@@ -69,7 +69,7 @@ function putProduct() {
     });
 }
 
-function createProduct() {
+function postProduct() {
     var product = {};
     product.Name = $('#productName').val();
     product.Category = $('#productCategory').val();

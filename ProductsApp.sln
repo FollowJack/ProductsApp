@@ -24,6 +24,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{ADE07A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsApp.Client.View", "ProductsApp.Client.View\ProductsApp.Client.View.csproj", "{DD953AC2-21E7-432A-A5BC-4CB25DA575A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsApp.Client.ConsoleView", "ProductsApp.Client.Console\ProductsApp.Client.ConsoleView.csproj", "{8A76CE40-8221-42A6-B160-9C8EBB1BB07F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{F65AE8BC-DFD9-4ADB-AC97-C7CCF5C98531}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsApp.Test.UnitTest", "ProductsApp.Test.UnitTest\ProductsApp.Test.UnitTest.csproj", "{A082CC87-00F3-469F-9FBA-8260D94FDBF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +56,14 @@ Global
 		{DD953AC2-21E7-432A-A5BC-4CB25DA575A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD953AC2-21E7-432A-A5BC-4CB25DA575A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD953AC2-21E7-432A-A5BC-4CB25DA575A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A76CE40-8221-42A6-B160-9C8EBB1BB07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A76CE40-8221-42A6-B160-9C8EBB1BB07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A76CE40-8221-42A6-B160-9C8EBB1BB07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A76CE40-8221-42A6-B160-9C8EBB1BB07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A082CC87-00F3-469F-9FBA-8260D94FDBF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A082CC87-00F3-469F-9FBA-8260D94FDBF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A082CC87-00F3-469F-9FBA-8260D94FDBF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A082CC87-00F3-469F-9FBA-8260D94FDBF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +74,7 @@ Global
 		{5DEE67DF-26ED-4938-9A4F-F2293DEF401E} = {377F8F6D-FE13-4250-BE38-982217AFE629}
 		{B6C6A3F3-05C5-45C4-9298-F0189CFC27F8} = {377F8F6D-FE13-4250-BE38-982217AFE629}
 		{DD953AC2-21E7-432A-A5BC-4CB25DA575A8} = {ADE07AF4-93C0-4B68-B217-5DBCA31AC5BA}
+		{8A76CE40-8221-42A6-B160-9C8EBB1BB07F} = {ADE07AF4-93C0-4B68-B217-5DBCA31AC5BA}
+		{A082CC87-00F3-469F-9FBA-8260D94FDBF3} = {F65AE8BC-DFD9-4ADB-AC97-C7CCF5C98531}
 	EndGlobalSection
 EndGlobal
